@@ -38,7 +38,7 @@ const Carousel = () => {
     }, [currentIndex]);
 
     return (
-        <div className="max-w-[1920px] h-[860px] w-full relative bg-gradient-to-r from-gray-200 via-gray-800 to-black font-inria">
+        <div className="max-w-[1920px] h-[860px] w-full relative bg-gradient-to-r from-gray-200 via-gray-800 to-black font-inria" id="carousel">
             <div style={{backgroundImage: `url(${slides[currentIndex].src})`}} className="w-full h-full bg-center bg-cover opacity-40 duration-500">
             </div>
             <Navbar />

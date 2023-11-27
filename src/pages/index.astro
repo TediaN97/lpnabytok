@@ -2,8 +2,14 @@
 import '../styles.css';
 import Layout from '../layouts/Layout.astro';
 import Carousel from '../components/Carousel.tsx';
+import Products from '../components/Products.tsx';
+import About from '../components/About';
+import Contact from '../components/Contact';
 ---
 
 <Layout title="LPNábytok">
 	<Carousel client:load />
+	<Products client:load />
+	<About client:load />
+	<Contact client:load />
 </Layout>
