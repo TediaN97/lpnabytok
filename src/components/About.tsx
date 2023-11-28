@@ -6,34 +6,40 @@ const About = () => {
         <div style={{backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/kitchen1.png)"}}className="h-[920px] font-inter justify-center mt-20 ml-32 mr-32 bg-center bg-cover bg-fixed rounded-2xl" id="about">
             <div className='grid grid-cols-3 h-[550px]'>
                 <div className='bg-gray-700 rounded-tl-2xl text-white text-center flex flex-col items-center justify-center'>
-                    <img className="h-10 mb-10" src='/hand-money-income-dollar-icon.svg' alt='price'/>
-                    <p className='font-bold text-3xl'>
-                        CENA
-                    </p>
-                    <br />
-                    <p className='text-xl w-72'>
-                        Bezkonkurenčne najlepšia na trhu.
-                    </p>
+                    <div className='items-center mt-20'>
+                        <img className="h-10 m-auto mb-5" src='/hand-money-income-dollar-icon.svg' alt='price'/>
+                        <p className='font-bold text-3xl'>
+                            CENA
+                        </p>
+                        <br />
+                        <p className='text-xl w-72'>
+                            Bezkonkurenčne najlepšia na trhu.
+                        </p>
+                    </div>
                 </div>
                 <div className='bg-red-600 text-white items-center justify-center text-center flex flex-col'>
-                    <img className="h-10 mb-10" src='/quality-badge-star-icon.svg' alt='quality'/>
-                    <p className='font-bold text-3xl'>
-                        KVALITA
-                    </p>
-                    <br />
-                    <p className='text-xl w-72'>
-                        Zaručujeme najvyššiu kvalitu dostupnú na trhu.
-                    </p>
+                    <div className='items-center mt-20'>
+                        <img className="h-10 m-auto mb-5" src='/quality-badge-star-icon.svg' alt='quality'/>
+                        <p className='font-bold text-3xl'>
+                            KVALITA
+                        </p>
+                        <br />
+                        <p className='text-xl w-72'>
+                            Zaručujeme najvyššiu kvalitu dostupnú na trhu.
+                        </p>
+                    </div>
                 </div>
                 <div className='items-center justify-center text-center flex flex-col bg-white'>
-                    <img className="h-10 mb-10" src='/eye-look-icon.svg' alt='vizualization'/>
-                    <p className='font-bold text-3xl'>
-                        VIZUALIZÁCIA
-                    </p>
-                    <br />
-                    <p className='text-xl w-72'>
-                        Naše vizualizácie sú vždy precízne a starostlivo vyhotovené.
-                    </p>
+                    <div className='items-center mt-20'>
+                        <img className="h-10 m-auto mb-5" src='/eye-look-icon.svg' alt='vizualization'/>
+                        <p className='font-bold text-3xl'>
+                            VIZUALIZÁCIA
+                        </p>
+                        <br />
+                        <p className='text-xl w-72'>
+                            Naše vizualizácie sú vždy precízne a starostlivo vyhotovené.
+                        </p>
+                    </div>
                 </div>
                 <div className="h-40  
                     border-l-[550px] border-l-gray-700
