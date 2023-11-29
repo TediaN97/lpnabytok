@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
 
     return (
-        <div className='mt-16 bg-gray-700 h-[400px] rounded-t-2xl'>
+        <div className='mt-16 bg-gray-600 h-[400px] rounded-t-2xl'>
             <div className='flex justify-between border-b ml-40 mr-40'>
                 <div className='pt-24 flex '>
                     <img className="h-24" src="/transparentLogo.png" alt="logo" />
