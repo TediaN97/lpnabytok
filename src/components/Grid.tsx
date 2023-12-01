@@ -7,27 +7,33 @@ const Grid = () => {
     const furniture= [
         {
             src: '/kuchynaFotka.jpg',
-            name: 'Kuchyne'
+            name: 'Kuchyne',
+            folder: 'kuchyne'
         },
         {
             src: '/vstavana.jpg',
-            name: 'Vstavané skrine'
+            name: 'Vstavané skrine',
+            folder: 'vstavaneSkrine'
         },
         {
             src: '/obyvacka2.jpg',
-            name: 'Obývacie steny'
+            name: 'Obývacie steny',
+            folder: 'obyvacieSteny'
         },
         {
             src: '/spalna.jpg',
-            name: 'Spálne'
+            name: 'Spálne',
+            folder: 'spalne'
         },
         {
             src: '/kupelna.jpg',
-            name: 'Kúpelne'
+            name: 'Kúpelne',
+            folder: 'kupelne'
         },
         {
             src: '/LPnabytok.jpg',
-            name: 'Príslušenstvo'
+            name: 'Príslušenstvo',
+            folder: 'prislusenstvo'
         },
     ];
 
@@ -46,7 +52,7 @@ const Grid = () => {
             }}
         >
             {furniture.map((item, index) => 
-                <Tile key={index} src={item.src} name={item.name} />
+                <Tile key={index} src={item.src} name={item.name} folder={item.folder}/>
             )}
         </motion.div>
     )

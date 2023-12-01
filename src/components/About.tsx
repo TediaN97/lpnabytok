@@ -58,7 +58,7 @@ const About = () => {
                         border-b-[48px] border-b-transparent">
                     </div>
                     <div className="h-28  
-                        border-l-[493px] border-l-red-600
+                        border-l-[500px] border-l-red-600
                         border-b-[48px] border-b-transparent">
                     </div>
                     <div className="h-16  

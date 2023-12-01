@@ -3,27 +3,27 @@ import React from 'react';
 const ContactForm = () => {
 
     return (
-       <div className='h-96 w-[800px] border-2 border-gray-600 bg-white ml-52 rounded-2xl mt-36'>
+       <div className='h-96 w-[800px] border-2 border-gray-600 bg-white ml-52 rounded-2xl mt-36 '>
             <form>
                 <div className='flex justify-evenly mt-16'>
                     <div className='flex flex-col '>
                         <input 
                             type="text"
-                            className="h-10 w-72 bg-gray-600 rounded-xl mb-5"
+                            className="h-10 w-72 bg-gray-600 rounded-xl mb-5 p-4 text-white shadow-lg shadow-gray-600"
                             id="name"
                             placeholder="Meno" 
                             required
                         />
                         <input 
                             type="email"
-                            className="h-10 bg-gray-600 rounded-xl mb-5"
+                            className="h-10 bg-gray-600 rounded-xl mb-5 p-4 text-white shadow-lg shadow-gray-600"
                             id="email"
                             placeholder="E-mail" 
                             required
                         />
                         <input 
                             type="tel"
-                            className="h-10 bg-gray-600 rounded-xl mb-10"
+                            className="h-10 bg-gray-600 rounded-xl mb-10 p-4 text-white shadow-lg shadow-gray-600"
                             id="phone"
                             placeholder="Telefón"
                             pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}" 
@@ -31,9 +31,8 @@ const ContactForm = () => {
                         />
                     </div>
                     <div>
-                        <input 
-                            type="textarea"
-                            className="h-40 w-80 bg-gray-600 rounded-xl mb-10"
+                        <textarea 
+                            className="h-40 w-80 bg-gray-600 rounded-xl mb-10 p-4 text-white shadow-lg shadow-gray-600"
                             id="textarea"
                             placeholder="Správa" 
                             required
