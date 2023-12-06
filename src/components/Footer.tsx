@@ -43,8 +43,8 @@ const Footer = () => {
                 </div>
                 <div className='text-white pt-24 ml-52 text-lg mb-10'>
                     <p>
-                        Pradiareň 745/12 <br />
-                        06001, Kežmarok <br />
+                        Rampová 3 <br />
+                        04001, Košice <br />
                         Slovensko <br />
                         <br />
                         +421 910 443 393 <br />
