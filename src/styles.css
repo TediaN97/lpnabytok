@@ -3,3 +3,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.clip-custom {
+    clip-path: theme('clipPath.custom');
+}
+
+@media (min-width: 1024px) {
+    .lg\:clip-custom {
+      clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+    }
+}

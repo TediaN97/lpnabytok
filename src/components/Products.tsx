@@ -6,7 +6,7 @@ const Products = () => {
 
     return (
         <div 
-            className="h-[1400px] font-inter justify-center mt-20" id="products"
+            className="font-inter justify-center mt-10 md:mt-20" id="products"
         >
             <MotivationText />
             <Grid />

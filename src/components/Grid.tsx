@@ -39,7 +39,7 @@ const Grid = () => {
 
     return (
         <motion.div 
-            className='grid grid-cols-3 gap-10 mt-20 ml-32 mr-32'
+            className='grid grid-cols-1 gap-5 mt-10 md:mt-20 ml-10 mr-10 md:gap-10 md:ml-32 md:mr-32 sm:grid-cols-2 xl:grid-cols-3'
             variants={{
                 hidden: { opacity: 0, y: 75},
                 visible: { opacity: 1, y: 0}

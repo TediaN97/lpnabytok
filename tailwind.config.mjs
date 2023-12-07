@@ -6,7 +6,13 @@ export default {
 			fontFamily: {
 				inria: ['Inria Sans'],
 				inter: ['Inter']
-			}
+			},
+			clipPath: {
+				custom: 'polygon(0 0, 100% 0, 100% 75%, 0 100%)'
+			},
+			screens: {
+				'lg': '1024px',
+			},
 		},
 	},
 	plugins: [
