@@ -10,8 +10,23 @@ const Navbar = () => {
     const [ isOpened, setIsOpened ] = useState(false);
 
     const menuButtonsName = [
-        "DOMOV", "PRODUKTY", "O NÁS", "KONTAKT"
-    ]
+        {
+            name: "DOMOV",
+            id: "carousel" 
+        },
+        {
+            name: "PRODUKTY",
+            id: "products"
+        },
+        {
+            name: "O NÁS",
+            id: "about"
+        },
+        {
+            name: "KONTAKT",
+            id: "contact"
+        }
+    ];
 
     const setFixed = () => {
         if(window.scrollY > 0){
@@ -19,6 +34,10 @@ const Navbar = () => {
         }else{
             setFix(false);
         }
+    }
+
+    const handleOnClick = (isOpened: boolean) => {
+        setIsOpened(isOpened)
     }
 
     useEffect(() => {
@@ -34,7 +53,7 @@ const Navbar = () => {
             <div className='hidden lg:flex lg:justify-between'>
                 <div className="ml-20 xl:ml-48">
                     <Link to="carousel" spy={true} smooth={true} offset={0} duration={1000} >
-                        <img className="w-52 cursor-pointer" src="/transparentLogo.png"/> 
+                        <img className="w-52 cursor-pointer" src="/transparent_logo.png"/> 
                     </Link>
                 </div>
                 <div className="mr-20 xl:mr-48 flex">
@@ -53,7 +72,7 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li className='cursor-pointer hover:text-white hover:animate-pulse'>
-                            <Link className="group hover:text-white transition duration-300" to="about" spy={true} smooth={true} offset={-25} duration={1000}>
+                            <Link className="group hover:text-white transition duration-300" to="about" spy={true} smooth={true} offset={-100} duration={1000}>
                                 O NÁS
                                 <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-red-600"></span>
                             </Link>
@@ -70,7 +89,7 @@ const Navbar = () => {
             <div className='flex justify-between items-center lg:hidden w-full'>
                 <div className={`z-20 ${fix ? "mt-0" : "mt-8"} transition-mt duration-500 ml-10 md:ml-20 cursor-pointer`}>
                     <Link to="carousel" spy={true} smooth={true} offset={0} duration={1000} >
-                        <img className="w-40 md:w-52 cursor-pointer" src="/transparentLogo.png"/> 
+                        <img className="w-40 md:w-52 cursor-pointer" src="/transparent_logo.png"/> 
                     </Link>
                 </div>
                 <button onClick={() => setIsOpened(!isOpened)} className={`z-20 fixed ${fix ? "mt-0" : "mt-8"} transition-mt duration-500 right-10 md:right-20 p-3 w-11 h-11 rounded-md`}>
@@ -106,7 +125,7 @@ const Navbar = () => {
                     }}  
                 >
                     <div className={`flex-1 flex items-center justify-center flex-col gap-10 p-8`}>
-                        {menuButtonsName.map((name: string, index: number) => (
+                        {menuButtonsName.map(({name, id}, index: number) => (
                            <motion.div className='opacity-0' key={index}
                             animate={
                                     isOpened ? "open" : "closed"
@@ -131,7 +150,7 @@ const Navbar = () => {
                                     }
                                 }}
                             >  
-                                <MenuButton name={name} />
+                                <MenuButton name={name} id={id} onClick={handleOnClick}/>
                             </motion.div>
                         ))}
                     </div>

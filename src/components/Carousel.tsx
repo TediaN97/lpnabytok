@@ -40,16 +40,16 @@ const Carousel = () => {
     }, [currentIndex]);
 
     return (
-        <div className="w-full h-[550px] sm:h-[700px] lg:max-w-[1920px] lg:h-[860px] bg-gradient-to-r from-gray-200 via-gray-800 to-black font-inria rounded-b-lg" id="carousel">
+        <div className="w-full h-[550px] sm:h-[700px] lg:max-w-[1920px] lg:h-[860px] bg-gray-800 font-inria rounded-b-lg" id="carousel">
             <div style={{backgroundImage: `url(${slides[currentIndex].src})`}} className="w-full h-full bg-center bg-cover opacity-40 duration-500 rounded-b-lg">
             </div>
             <Navbar />
             <div className="absolute flex items-center justify-between w-full top-[0%]">
-                <div className="w-10 h-[550px] sm:h-[700px] md:w-16 lg:w-24 lg:h-[860px] flex lg:bg-gradient-to-r lg:from-gray-600 lg:to-white/0 justify-center items-center cursor-pointer">
+                <div className="w-10 h-[550px] sm:h-[700px] md:w-16 lg:w-24 lg:h-[860px] flex lg:bg-gradient-to-r lg:from-black lg:to-white/0 justify-center items-center cursor-pointer">
                     <img className="w-16 h-16" src="/chevron-compact-left.svg" alt="left-chevron" onClick={prevSlide} />
                 </div>
                 <Main />
-                <div className="w-10 h-[550px] sm:h-[700px] md:w-16 lg:h-[860px] lg:w-24 flex lg:bg-gradient-to-r lg:from-white/0 lg:to-gray-600 justify-center items-center right-0 cursor-pointer">
+                <div className="w-10 h-[550px] sm:h-[700px] md:w-16 lg:h-[860px] lg:w-24 flex lg:bg-gradient-to-r lg:from-white/0 lg:to-black justify-center items-center right-0 cursor-pointer">
                     <img className="w-16 h-16" src="/chevron-compact-right.svg" alt="right-chevron" onClick={nextSlide}/>
                 </div>
             </div>

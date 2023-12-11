@@ -36,7 +36,7 @@ const Main = () => {
             >
                 ŠITÉ NA MIERU
             </motion.h1 >
-            <Link to="about" spy={true} smooth={true} offset={-100} duration={1000}>
+            <Link to="products" spy={true} smooth={true} offset={-100} duration={1000}>
                 <motion.button  
                 variants={{
                     hidden: { opacity: 0, y: 75},
@@ -50,8 +50,8 @@ const Main = () => {
                 }}
                 className="w-32 h-10 mt-10 rounded-xl text-red hover:before:bg-redborder-red-600 relative sm:w-36 sm:h-12 lg:h-[50px] lg:w-40 overflow-hidden border-2 border-red-600 bg-red-600/40 px-3 text-white shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-red-600 before:transition-all before:duration-700 hover:text-white hover:shadow-red-600 hover:before:left-0 hover:before:w-full"
             >
-                <span className="relative z-10 font-bold">
-                    VIAC INFO
+                <span className="relative z-10 text-xs font-bold">
+                    NAŠA TVORBA
                 </span>
             </motion.button>
             </Link>

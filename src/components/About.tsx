@@ -61,7 +61,7 @@ const About = () => {
                 <div className='justify-center text-center items-center flex flex-col pt-16 pb-16'>
                     <h1 className='group text-white text-2xl sm:text-3xl lg:text-5xl font-bold'>
                         O NÁS
-                        <span className="block w-10 mt-3 ml-5 sm:ml-7 sm:w-12 lg:mt-5 lg:w-24 transition-all duration-500 h-1 bg-red-600"></span>
+                        <span className="block w-10 mt-3 ml-5 sm:ml-7 sm:w-12 lg:mt-5 lg:w-24 h-1 bg-red-600"></span>
                     </h1>
                     <br/>
                     <p className='mt-10 text-gray-100 text-lg w-full pl-3 pr-3 sm:w-3/4'>

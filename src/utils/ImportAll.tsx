@@ -17,7 +17,7 @@ export const bathroomsImages = importAll(
 );
 
 export const accessoriesImages = importAll(
-  import.meta.glob('../../public/prislusenstvo/*.jpg') as Record<string, string>
+  import.meta.glob('../../public/ine/*.jpg') as Record<string, string>
 );
 
 export const wardrobesImages = importAll(

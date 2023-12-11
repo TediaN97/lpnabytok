@@ -32,8 +32,8 @@ const Grid = () => {
         },
         {
             src: '/LPnabytok.jpg',
-            name: 'Príslušenstvo',
-            folder: 'prislusenstvo'
+            name: 'Iné',
+            folder: 'ine'
         },
     ];
 

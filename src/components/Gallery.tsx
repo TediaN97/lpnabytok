@@ -79,9 +79,9 @@ const Gallery = (props: props) => {
         <img className='w-auto max-w-full h-auto max-h-full block leading-1 box-border pl-[20px] pr-[20px] m-auto' src={tempingSrc} alt="" />
         <img className={`fixed w-16 h-16 p-4 bg-black/40 z-50 hover:bg-white/10 cursor-pointer rounded-2xl left-5 ${currentImageIndex === 0 ? "hidden" : "flex" } `} src="/chevron-compact-left.svg" alt="left-chevron" onClick={() => prevImg( currentImageIndex - 1)} />
         <img className={`fixed w-16 h-16 p-4 bg-black/40 z-50 hover:bg-white/10 cursor-pointer rounded-2xl right-5 ${currentImageIndex === imgs.length - 1 ? "hidden" : "flex" } `} src="/chevron-compact-right.svg" alt="right-chevron" onClick={() => nextImg( currentImageIndex + 1)}/>
-        <img className='fixed top-6 right-5 p-4 bg-black/40 z-50 cursor-pointer hover:bg-white/10 rounded-2xl' src='../../public/close.svg' alt='close' onClick={close} /> 
+        <img className='fixed top-6 right-5 p-4 bg-black/40 z-50 cursor-pointer hover:bg-white/10 rounded-2xl' src='/close.svg' alt='zatvoriť' onClick={close} /> 
       </div>
-      <div className='relative p-5 md:p-10 ml-32 mr-32'>
+      <div className='relative p-5 md:p-10 xl:ml-32 xl:mr-32'>
           <div className='columns-1 gap-5 lg:gap-8 sm:columns-2 lg:columns-3 xl:columns-4 [&>img:not(:first-child)]:mt-5 lg:[&>img:not(:first-child)]:mt-8'>
               {props.gallery === 'kuchyne' ? (
                 kitchenImages.map(({ key, value }, index) => (
@@ -103,9 +103,9 @@ const Gallery = (props: props) => {
                 bathroomsImages.map(({ key, value }, index) => (
                   <img className='rounded-2xl cursor-pointer hover:opacity-70' key={index} src={key} alt={`kúpeľňa-${index}`} onClick={() => getImg(bathroomsImages, index)}/>
                 ))
-              ) : props.gallery === 'prislusenstvo' ? (
+              ) : props.gallery === 'ine' ? (
                 accessoriesImages.map(({ key, value }, index) => (
-                  <img className='rounded-2xl cursor-pointer hover:opacity-70' key={index} src={key} alt={`príslušenstvo-${index}`} onClick={() => getImg(accessoriesImages, index)}/>
+                  <img className='rounded-2xl cursor-pointer hover:opacity-70' key={index} src={key} alt={`ine-${index}`} onClick={() => getImg(accessoriesImages, index)}/>
                 ))
               ) : ( 
                 <div>

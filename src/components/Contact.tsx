@@ -35,16 +35,20 @@ const Contact = () => {
                 delay: 0.25
             }}
         >
-            <div className={`top-24 bg-green-100 border border-green-500 text-green-700 px-4 py-3 text-center rounded relative z-50 transition-opacity duration-500 ${state ? "opacity-100" : "opacity-0 duration-500" }`} role="alert">
-                <strong className="font-bold">Úšpešne!</strong>
+            {state ? (
+                <div className={`top-[${window.scrollY}px] w-full bg-green-100 border border-green-500 text-green-700 px-4 py-3 text-center rounded absolute z-50 transition-opacity duration-500 ${state ? "opacity-100" : "opacity-0 duration-500" }`} role="alert">
+                    <strong className="font-bold">Úšpešne!</strong>
                 <span className="block sm:inline"> Správa bola úšpešne odoslaná.</span>
             </div>
-            <div className="h-[300px] font-inter mt-20 ml-96 mr-20 flex items-center justify-between" id="contact">
-                <p className='text-3xl font-bold'>
-                    OZVITE SA NÁM
-                    <span className="block ml-10 mt-5 w-36 transition-all duration-500 h-1 bg-red-600"></span>
-                </p>
-                <ContactForm isStateSuccess={handleState} />
+            ) : (<div></div>)}
+            <div className="mt-10 xl:h-[150px] xl:mb-52" id="contact">
+                <div className='w-full flex flex-col items-center justify-center text-center xl:flex-row xl:absolute xl:justify-evenly'>
+                    <h1 className='text-2xl sm:text-3xl lg:text-5xl font-bold xl:mb-24'>
+                        OZVITE SA NÁM
+                        <span className="block w-36 ml-5 mt-3 sm:w-44 lg:w-72 lg:ml-7 lg:mt-5 h-1 bg-red-600"></span>
+                    </h1>
+                    <ContactForm isStateSuccess={handleState} />
+                </div>
             </div>
             <Footer />
         </motion.div>
