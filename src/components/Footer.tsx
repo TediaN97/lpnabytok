@@ -23,21 +23,27 @@ const Footer = () => {
                             </Link>
                         </li>
                         <li className='mb-3 cursor-pointer transport-all duration-500 hover:transport-all hover:duration-500 hover:text-red-600'>
-                            Ochrana osobných údajov
+                            <a href="/gdpr">
+                                Ochrana osobných údajov
+                            </a>
                         </li>
                     </ul>
                     <div className='flex justify-center lg:justify-start'>
-                        <motion.img 
-                            className='h-12 md:h-14 cursor-pointer' src='/facebook_logo.png' alt="facebook" 
-                            whileHover={{
-                                scale: 1.1,
-                            }}
-                        />
-                        <motion.img className='h-12 md:h-14 cursor-pointer' src='/Instagram_logo.png' alt="facebook" 
-                            whileHover={{
-                                scale: 1.1,
-                            }}
-                        />
+                        <a href='https://www.facebook.com/lpnabytok'>
+                            <motion.img 
+                                className='h-12 md:h-14 cursor-pointer' src='/facebook_logo.png' alt="facebook" 
+                                whileHover={{
+                                    scale: 1.1,
+                                }}
+                            />
+                        </a>
+                        <a href='https://www.instagram.com/lpnabytok/'>
+                            <motion.img className='h-12 md:h-14 cursor-pointer' src='/Instagram_logo.png' alt="facebook" 
+                                whileHover={{
+                                    scale: 1.1,
+                                }}
+                            />
+                        </a>
                     </div>     
                 </div>
                 <div className='mt-5 text-white text-md lg:ml-52 md:text-lg mb-5 lg:mb-10 lg:mt-10 xl:mt-24'>

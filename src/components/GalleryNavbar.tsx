@@ -24,9 +24,9 @@ const Navbar = () => {
 
     return (
         <nav className={`relative flex z-20 top-0 justify-between w-full text-black bg-transparent trasition duration-500`}>
-            <div className="ml-48">
+            <div className="ml-10 xl:ml-48">
                 <a href="/">
-                    <img className="w-52 cursor-pointer" src="/transparentLogo.png"/> 
+                    <img className="h-14 md:h-16 lg:h-20 cursor-pointer" src="/transparentLogo.png"/> 
                 </a>
             </div>
         </nav>
