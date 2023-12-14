@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ContactForm from './ContactForm.tsx';
 import Footer from './Footer.tsx';
-import { motion } from 'framer-motion';
 
 const Contact = () => {
 
@@ -23,25 +22,14 @@ const Contact = () => {
 
 
     return (
-        <motion.div
-            variants={{
-                hidden: { opacity: 0, y: 75},
-                visible: { opacity: 1, y: 0}
-            }}
-            initial="hidden"
-            animate="visible"
-            transition={{
-                duration: 0.5,
-                delay: 0.25
-            }}
-        >
+        <div>
             {state ? (
-                <div className={`top-[${window.scrollY}px] w-full bg-green-100 border border-green-500 text-green-700 px-4 py-3 text-center rounded absolute z-50 transition-opacity duration-500 ${state ? "opacity-100" : "opacity-0 duration-500" }`} role="alert">
+                <div className={`top-[${window.scrollY}px] w-full bg-green-100 border border-green-500 text-green-700 px-4 py-3 text-center rounded absolute z-50 transition-opacity duration-500 ${state ? "opacity-100" : "opacity-0 duration-500" }`} data-aos="fade-down" role="alert">
                     <strong className="font-bold">Úšpešne!</strong>
                 <span className="block sm:inline"> Správa bola úšpešne odoslaná.</span>
             </div>
             ) : (<div></div>)}
-            <div className="mt-10 xl:h-[150px] xl:mb-52" id="contact">
+            <div className="mt-10 xl:h-[150px] xl:mb-52" id="contact" data-aos="fade-up" data-aos-duration="600" data-aos-easing="ease-in-sine" >
                 <div className='w-full flex flex-col items-center justify-center text-center xl:flex-row xl:absolute xl:justify-evenly'>
                     <h1 className='text-2xl sm:text-3xl lg:text-5xl font-bold xl:mb-24'>
                         OZVITE SA NÁM
@@ -51,7 +39,7 @@ const Contact = () => {
                 </div>
             </div>
             <Footer />
-        </motion.div>
+        </div>
     )
 }
 

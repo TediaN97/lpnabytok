@@ -1,0 +1,65 @@
+---
+interface Props {
+    gallery: string;
+}
+
+const { gallery } = Astro.props;
+
+---
+
+
+{
+    gallery === 'kuchyne' ? (
+        <div>
+            <a href='/#products'><img class="absolute h-12 w-10 left-10 text-xl p-1 md:text-2xl md:p-2 md:h-14 md:w-14 bg-red-600 lg:h-16 xl:left-48 lg:w-20 lg:text-3xl lg:p-2 lg:hover:bg-red-600/80 mt-10 text-white rounded-2xl" src="/chevron-compact-left.svg" alt="naspäť" /></a>
+            <h1 class='h-12 w-32 text-xl md:text-2xl md:h-14 md:w-48 lg:h-16 lg:w-52 lg:text-3xl font-black mt-10 text-black rounded-2xl text-center justify-center'>
+                KUCHYNE
+                <span class="block w-16 mt-3 ml-8 sm:ml-7 md:ml-12 lg:mt-5 md:w-24 lg:ml-14 h-1 bg-red-600"></span>
+            </h1>
+        </div>
+    ) : gallery === 'vstavaneSkrine' ? (
+        <div>
+            <a href='/#products'><img class="absolute h-12 w-10 left-10 text-xl p-1 md:text-2xl md:p-2 md:h-14 md:w-14 bg-red-600 lg:h-16 xl:left-48 lg:w-20 lg:text-3xl lg:p-2 lg:hover:bg-red-600/80 mt-10 text-white rounded-2xl" src="/chevron-compact-left.svg" alt="naspäť" /></a>
+            <h1 class='h-12 w-48 text-xl md:text-2xl md:h-14 md:w-60 lg:h-16 lg:w-72 lg:text-3xl font-black mt-10 text-black rounded-2xl text-center justify-center'>
+                VSTAVANÉ SKRINE
+                <span class="block w-32 mt-3 ml-8 sm:ml-7 sm:w-36 md:ml-10 lg:mt-5 md:w-40 lg:w-52 lg:ml-10 h-1 bg-red-600"></span>
+            </h1>
+        </div>
+    ) : gallery === 'obyvacieSteny' ? (
+        <div>
+            <a href='/#products'><img class="absolute h-12 w-10 left-10 text-xl p-1 md:text-2xl md:p-2 md:h-14 md:w-14 bg-red-600 lg:h-16 xl:left-48 lg:w-20 lg:text-3xl lg:p-2 lg:hover:bg-red-600/80 mt-10 text-white rounded-2xl" src="/chevron-compact-left.svg" alt="naspäť" /></a>
+            <h1 class='h-12 w-48 text-xl md:text-2xl md:h-14 md:w-60 lg:h-16 lg:w-72 lg:text-3xl font-black mt-10 text-black rounded-2xl text-center justify-center'>
+                OBÝVACIE STENY
+                <span class="block w-32 mt-3 ml-8 sm:ml-7 sm:w-36 md:ml-10 lg:mt-5 md:w-40 lg:w-52 lg:ml-10 h-1 bg-red-600"></span>
+            </h1>
+        </div>
+    ) : gallery === 'ine' ? (
+        <div>
+            <a href='/#products'><img class="absolute h-12 w-10 left-10 text-xl p-1 md:text-2xl md:p-2 md:h-14 md:w-14 bg-red-600 lg:h-16 xl:left-48 lg:w-20 lg:text-3xl lg:p-2 lg:hover:bg-red-600/80 mt-10 text-white rounded-2xl" src="/chevron-compact-left.svg" alt="naspäť" /></a>
+            <h1 class='h-12 w-20 text-xl md:text-2xl md:h-14 md:w-28 lg:h-16 lg:w-20 lg:text-3xl font-black mt-10 text-black rounded-2xl text-center justify-center'>
+                INÉ
+                <span class="block w-4 mt-3 ml-7 sm:ml-7 md:ml-11 lg:mt-5 lg:w-5 lg:ml-7 h-1 bg-red-600"></span>
+            </h1>
+        </div>
+    ) : gallery === 'spalne' ? (
+        <div>
+            <a href='/#products'><img class="absolute h-12 w-10 left-10 text-xl p-1 md:text-2xl md:p-2 md:h-14 md:w-14 bg-red-600 lg:h-16 xl:left-48 lg:w-20 lg:text-3xl lg:p-2 lg:hover:bg-red-600/80 mt-10 text-white rounded-2xl" src="/chevron-compact-left.svg" alt="naspäť" /></a>
+            <h1 class='h-12 w-32 text-xl md:text-2xl md:h-14 md:w-48 lg:h-16 lg:w-52 lg:text-3xl font-black mt-10 text-black rounded-2xl text-center justify-center'>
+                SPÁLNE
+                <span class="block w-16 mt-3 ml-8 sm:ml-7 md:ml-16 lg:mt-5 md:w-16 lg:w-20 lg:ml-16 h-1 bg-red-600"></span>
+            </h1>
+        </div>
+    ) : gallery === 'kupelne' ? (
+        <div>
+            <a href='/#products'><img class="absolute h-12 w-10 left-10 text-xl p-1 md:text-2xl md:p-2 md:h-14 md:w-14 bg-red-600 lg:h-16 xl:left-48 lg:w-20 lg:text-3xl lg:p-2 lg:hover:bg-red-600/80 mt-10 text-white rounded-2xl" src="/chevron-compact-left.svg" alt="naspäť" /></a>
+            <h1 class='h-12 w-32 text-xl md:text-2xl md:h-14 md:w-48 lg:h-16 lg:w-52 lg:text-3xl font-black mt-10 text-black rounded-2xl text-center justify-center'>
+                KÚPELNE
+                <span class="block w-16 mt-3 ml-8 sm:ml-7 md:ml-12 lg:mt-5 md:w-24 lg:ml-14 h-1 bg-red-600"></span>
+            </h1>
+        </div>
+    ) : (
+        <div>
+
+        </div>
+    )
+}

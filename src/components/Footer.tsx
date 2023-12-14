@@ -1,26 +1,25 @@
 import React from 'react';
 import { Link } from 'react-scroll';
-import { motion } from 'framer-motion';
 
 const Footer = () => {
 
     return (
-        <div className='mt-10 rounded-t-lg lg:mt-16 bg-gray-600 lg:rounded-t-2xl'>
-            <div className='flex flex-col items-center text-center lg:items-start lg:text-left lg:flex-row lg:justify-between border-b ml-10 mr-10 lg:ml-40 lg:mr-40'>
+        <div className='mt-10 rounded-t-lg lg:mt-16 bg-gray-600 lg:rounded-t-2xl' data-aos="fade-up" data-aos-duration="600" data-aos-easing="ease-in-sine" >
+            <div className='flex flex-col items-center text-center lg:items-start lg:text-left lg:flex-row lg:justify-between border-b ml-10 mr-10 lg:ml-40 lg:mr-40' >
                 <div className='mt-5 lg:mt-10 xl:mt-24'>
-                    <img className="h-20" src="/transparent_logo.png" alt="LPnábytok" />
+                    <img className="w-52" height="50" width="50" src="/transparent_logo.webp" alt="LPnábytok" />
                 </div>
-                <div className='text-white mt-5 lg:ml-52 text-md md:text-lg lg:mt-10 xl:mt-24'>
+                <div className='text-white mt-5 lg:ml-52 text-md md:text-lg lg:mt-10 xl:mt-24 scroll-smooth'>
                     <ul>
                         <li className='mb-3 cursor-pointer transport-all duration-500 hover:transport-all hover:duration-500 hover:text-red-600'>
-                            <Link to="about" spy={true} smooth={true} offset={-25} duration={1000}>
+                            <a href="#about">
                                 O Nás
-                            </Link>
+                            </a>
                         </li>
                         <li className='mb-3 cursor-pointer transport-all duration-500 hover:transport-all hover:duration-500 hover:text-red-600'>
-                            <Link to="products" spy={true} smooth={true} offset={-100} duration={1000}>
+                            <a href="#products">
                                 Produkty
-                            </Link>
+                            </a>
                         </li>
                         <li className='mb-3 cursor-pointer transport-all duration-500 hover:transport-all hover:duration-500 hover:text-red-600'>
                             <a href="/gdpr">
@@ -30,19 +29,11 @@ const Footer = () => {
                     </ul>
                     <div className='flex justify-center lg:justify-start'>
                         <a href='https://www.facebook.com/lpnabytok'>
-                            <motion.img 
-                                className='h-12 md:h-14 cursor-pointer' src='/facebook_logo.png' alt="facebook" 
-                                whileHover={{
-                                    scale: 1.1,
-                                }}
-                            />
+                            <img 
+                                className='cursor-pointer hover:scale-110 transition-scale duration-500' height="50" width="50" src='/facebook_logo.webp' alt="facebook"/>
                         </a>
                         <a href='https://www.instagram.com/lpnabytok/'>
-                            <motion.img className='h-12 md:h-14 cursor-pointer' src='/Instagram_logo.png' alt="facebook" 
-                                whileHover={{
-                                    scale: 1.1,
-                                }}
-                            />
+                            <img className='cursor-pointer hover:scale-110 transition-scale duration-500' height="50" width="50" src='/Instagram_logo.webp' alt="facebook" />
                         </a>
                     </div>     
                 </div>

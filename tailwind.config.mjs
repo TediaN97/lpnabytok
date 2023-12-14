@@ -13,6 +13,9 @@ export default {
 			screens: {
 				'lg': '1024px',
 			},
+			scrollSmooth: {
+				scroll: "smooth",
+			},
 		},
 	},
 	plugins: [

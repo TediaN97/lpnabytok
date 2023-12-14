@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
 
 interface props {
@@ -11,11 +10,11 @@ interface props {
 const MenuButton = (props: props) => {
 
     return (
-        <Link className="group hover:text-white transition duration-300" to={props.id} spy={true} smooth={true} offset={-100} duration={1000} >
+        <a href={`#${props.id}`} className="group hover:text-white transition duration-300" >
             <motion.button className="text-2xl font-inter font-black cursor-pointer text-white"
                 whileHover={{
                     scale: 1.3,
-                    color: '#4f46e5',
+                    color: '#dd2627',
                     originX: 0
                 }}
                 transition={{
@@ -27,7 +26,7 @@ const MenuButton = (props: props) => {
             >
                 {props.name}
             </motion.button>
-        </Link>
+        </a>
     )
 }
 
