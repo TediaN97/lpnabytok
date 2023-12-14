@@ -40,7 +40,7 @@ const Carousel = () => {
     }, [currentIndex]);
 
     return (
-        <div className="w-full h-[550px] sm:h-[700px] lg:max-w-[1920px] lg:h-[860px] bg-gray-800 font-inria rounded-b-lg" id="carousel" data-aos="fade-up" data-aos-duration="600" data-aos-easing="ease-in-sine" >
+        <div className="w-full h-[550px] sm:h-[700px] lg:max-w-[1920px] lg:h-[860px] bg-gray-800 font-inria rounded-b-lg" id="carousel" >
             <div style={{backgroundImage: `url(${slides[currentIndex].src})`}} className="w-full h-full bg-center bg-cover opacity-40 duration-500 rounded-b-lg">
             </div>
             <Navbar />
