@@ -5,7 +5,6 @@ import { bathroomsImages } from '../utils/ImportAll';
 import { accessoriesImages } from '../utils/ImportAll';
 import { wardrobesImages } from '../utils/ImportAll';
 import { livingWallsImages } from '../utils/ImportAll';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 interface props {
   gallery: string
@@ -105,35 +104,34 @@ const Gallery = (props: props) => {
           <div className='columns-1 gap-5 lg:gap-8 sm:columns-2 lg:columns-3 xl:columns-4 [&>img:not(:first-child)]:mt-5 lg:[&>img:not(:first-child)]:mt-8'>
               {props.gallery === 'kuchyne' ? (
                 kitchenImages.map(({ key, value }, index) => (
-                  <LazyLoadImage className='rounded-2xl cursor-pointer hover:opacity-70' 
+                  <img className='rounded-2xl cursor-pointer hover:opacity-70' 
+                    loading="lazy" 
                     key={index} 
                     src={key}  
                     alt={`kuchyňa-${index}`} 
-                    effect='black-and-white'
                     width="100%"
                     height="100%"
-                    placeholderSrc={key}
                     onClick={() => getImg(kitchenImages, index)} />
                 ))
               ) : props.gallery === 'vstavaneSkrine' ? (
                 wardrobesImages.map(({ key, value }, index) => (
-                  <LazyLoadImage className='rounded-2xl cursor-pointer hover:opacity-70' effect="blur" key={index} src={key} placeholderSrc={key} alt={`vstavaná_skriňa-${index}`} onClick={() => getImg(wardrobesImages, index)}/>
+                  <img className='rounded-2xl cursor-pointer hover:opacity-70' key={index} loading="lazy" src={key} alt={`vstavaná_skriňa-${index}`} onClick={() => getImg(wardrobesImages, index)}/>
                 ))
               ) : props.gallery === 'obyvacieSteny' ? (
                 livingWallsImages.map(({ key, value }, index) => (
-                  <LazyLoadImage className='rounded-2xl cursor-pointer hover:opacity-70' effect="blur" key={index} src={key} placeholderSrc={key} alt={`obývacia_stena-${index}`} onClick={() => getImg(livingWallsImages, index)}/>
+                  <img className='rounded-2xl cursor-pointer hover:opacity-70' key={index} loading="lazy" src={key} alt={`obývacia_stena-${index}`} onClick={() => getImg(livingWallsImages, index)}/>
                 ))
               ) : props.gallery === 'spalne' ? (
                 bedroomsImages.map(({ key, value }, index) => (
-                  <LazyLoadImage className='rounded-2xl cursor-pointer hover:opacity-70' effect="blur" key={index} src={key} placeholderSrc={key} alt={`spálňa-${index}`} onClick={() => getImg(bedroomsImages, index)}/>
+                  <img className='rounded-2xl cursor-pointer hover:opacity-70' key={index} loading="lazy" src={key} alt={`spálňa-${index}`} onClick={() => getImg(bedroomsImages, index)}/>
                 ))
               ) : props.gallery === 'kupelne' ? (
                 bathroomsImages.map(({ key, value }, index) => (
-                  <LazyLoadImage className='rounded-2xl cursor-pointer hover:opacity-70' effect="blur" key={index} src={key} placeholderSrc={key} alt={`kúpeľňa-${index}`} onClick={() => getImg(bathroomsImages, index)}/>
+                  <img className='rounded-2xl cursor-pointer hover:opacity-70'  key={index} loading="lazy" src={key} alt={`kúpeľňa-${index}`} onClick={() => getImg(bathroomsImages, index)}/>
                 ))
               ) : props.gallery === 'ine' ? (
                 accessoriesImages.map(({ key, value }, index) => (
-                  <LazyLoadImage className='rounded-2xl cursor-pointer hover:opacity-70' effect="blur" key={index} src={key} placeholderSrc={key} alt={`ine-${index}`} onClick={() => getImg(accessoriesImages, index)}/>
+                  <img className='rounded-2xl cursor-pointer hover:opacity-70' key={index} loading="lazy" src={key} alt={`ine-${index}`} onClick={() => getImg(accessoriesImages, index)}/>
                 ))
               ) : ( 
                 <div>
