@@ -12,7 +12,7 @@ const Carousel = () => {
             src: '/intro2.webp'
         },
         {
-            src: '/intro4.webp'
+            src: '/intro3.webp'
         },
     ];
 
