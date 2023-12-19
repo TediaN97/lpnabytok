@@ -1,23 +1,63 @@
-import React, { useEffect } from 'react'; 
+import React, { useState, useEffect, type ChangeEvent, type FormEvent } from 'react'; 
 import { useForm, ValidationError } from '@formspree/react';
 
 interface props {
     isStateSuccess: (newState: boolean) => void;
 }
 
+interface FormData {
+    name: string;
+    email: string;
+    tel: string;
+    message: string;
+  }
+
 const ContactForm = (props: props) => {
 
-    const [state, handleSubmit] = useForm("xbjvnlaz");
+    const [ formData, setFormData ] = useState<FormData>({
+        name: '',
+        email: '',
+        tel: '',
+        message: '',
+    })
+    
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData({...formData, [e.target.name]: e.target.value });
+    }
 
-    useEffect(() => {
-        if(state.succeeded){
-            props.isStateSuccess(true);
+    const handleSubmit = async (e: FormEvent) => {
+        e.preventDefault();
+    
+        try {
+          const response = await fetch('/lpnabytok/src/utils/senderMail.php', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+          });
+    
+          if (response.ok) {
+            // Spracovanie úspešného odoslanie
+            console.log('Formulár bol úspešne odoslaný.');
+          } else {
+            // Spracovanie chyby
+            console.error('Chyba pri odosielaní formulára.');
+          }
+        } catch (error) {
+          console.error('Chyba pri odosielaní formulára:', error);
         }
-        return () => {
-            state.succeeded = false;
-        }
+      };
 
-    }, [state.succeeded])
+    // useEffect(() => {
+    //     if(state.succeeded){
+    //         props.isStateSuccess(true);
+    //     }
+    //     return () => {
+    //         state.succeeded = false;
+    //     }
+
+    // }, [state.succeeded])
 
     return (
        <div className='w-full mt-10 lg:w-9/12 xl:w-[800px] rounded-lg border-2 border-gray-600 bg-white lg:rounded-2xl'>
@@ -30,12 +70,9 @@ const ContactForm = (props: props) => {
                             className="h-10 w-11/12 lg:w-80 bg-gray-600 rounded-xl mb-5 p-4 text-white shadow-lg shadow-gray-600"
                             id="name"
                             placeholder="Meno" 
+                            value={formData.name}
+                            onChange={handleChange}
                             required
-                        />
-                        <ValidationError 
-                            prefix="Name" 
-                            field="name"
-                            errors={state.errors}
                         />
                         <input 
                             name="email"
@@ -43,12 +80,9 @@ const ContactForm = (props: props) => {
                             className="h-10 w-11/12 lg:w-80 bg-gray-600 rounded-xl mb-5 p-4 text-white shadow-lg shadow-gray-600"
                             id="email"
                             placeholder="E-mail" 
+                            value={formData.email}
+                            onChange={handleChange}
                             required
-                        />
-                        <ValidationError 
-                            prefix="Email" 
-                            field="email"
-                            errors={state.errors}
                         />
                         <input 
                             name="tel"
@@ -56,13 +90,10 @@ const ContactForm = (props: props) => {
                             className="h-10 w-11/12 lg:w-80 bg-gray-600 rounded-xl mb-10 p-4 text-white shadow-lg shadow-gray-600"
                             id="tel"
                             placeholder="Telefón"
+                            value={formData.tel}
+                            onChange={handleChange}
                             maxLength={13} 
                             required
-                        />
-                        <ValidationError 
-                            prefix="Tel" 
-                            field="tel"
-                            errors={state.errors}
                         />
                     </div>
                     <div>
@@ -71,12 +102,9 @@ const ContactForm = (props: props) => {
                             className="h-40 w-11/12 lg:w-80 bg-gray-600 rounded-xl mb-10 p-4 text-white shadow-lg shadow-gray-600 resize-none"
                             id="textarea"
                             placeholder="Správa" 
+                            value={formData.message}
+                            onChange={handleChange}
                             required
-                        />
-                        <ValidationError 
-                            prefix="Message" 
-                            field="message"
-                            errors={state.errors}
                         />
                     </div>     
                 </div>
@@ -86,7 +114,6 @@ const ContactForm = (props: props) => {
                     </p>
                     <button
                         type="submit"
-                        disabled={state.submitting}
                         className='w-56 h-12 rounded-xl mt-5 mb-10 text-white bg-red-600 font-bold transform-all duration-200 hover:transform-all hover:duration-200 hover:bg-red-700 hover:shadow-red-700 hover:shadow-xl'
                     >
                         ODOSLAŤ

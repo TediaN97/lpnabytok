@@ -37,7 +37,7 @@ const Carousel = () => {
     }, [currentIndex]);
 
     return (
-        <div className="w-full h-[550px] sm:h-[95vh] bg-gray-800 font-inria rounded-b-lg" id="carousel" >
+        <div className="w-full h-[550px] sm:h-[95vh] bg-gray-800 font-inria rounded-b-lg" id="Domov" >
             <div style={{backgroundImage: `url(${slides[currentIndex].src})`}} className="bg-[length:100%_100%] w-full h-full bg-center opacity-40 duration-500 rounded-b-lg">
             </div>
             <Navbar />

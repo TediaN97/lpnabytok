@@ -11,19 +11,19 @@ const Navbar = () => {
     const menuButtonsName = [
         {
             name: "DOMOV",
-            id: "carousel" 
+            id: "Domov" 
         },
         {
             name: "PRODUKTY",
-            id: "products"
+            id: "Produkty"
         },
         {
             name: "O NÁS",
-            id: "about"
+            id: "ONas"
         },
         {
             name: "KONTAKT",
-            id: "contact"
+            id: "Kontakt"
         }
     ];
 
@@ -51,14 +51,14 @@ const Navbar = () => {
         <nav className={`fixed z-20 top-0 w-full text-white ${fix ? ' bg-gray-600 font-inria trasition duration-500 shadow-2xl' : 'bg-transparent  trasition duration-500'}`}>
             <div className='hidden lg:flex lg:justify-between'>
                 <div className="ml-20 xl:ml-48">
-                    <a href="#carousel" >
+                    <a href="#Domov" >
                         <img className="w-52 cursor-pointer" height="100" width="208" src="/transparent_logo.webp" alt="LPnabýtok_logo"/> 
                     </a>
                 </div>
                 <div className="mr-20 xl:mr-48 flex">
                     <ul className="flex items-center lg:gap-10 xl:gap-32">
                         <li className='cursor-pointer hover:animate-pulse'>
-                            <a href="#carousel">
+                            <a href="#Domov">
                                 <p className="group hover:text-white transition duration-300">
                                     DOMOV
                                     <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-red-600"></span>
@@ -67,7 +67,7 @@ const Navbar = () => {
 
                         </li>
                         <li className="font-bold cursor-pointer hover:animate-pulse">
-                            <a href="#products">
+                            <a href="#Produkty">
                                 <p className="group hover:text-white transition duration-300">
                                     PRODUKTY
                                     <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-red-600"></span>
@@ -75,7 +75,7 @@ const Navbar = () => {
                             </a>
                         </li>
                         <li className='cursor-pointer hover:text-white hover:animate-pulse'>
-                            <a href="#about">
+                            <a href="#ONas">
                                 <p className="group hover:text-white transition duration-300">
                                     O NÁS
                                     <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-red-600"></span>
@@ -83,7 +83,7 @@ const Navbar = () => {
                             </a>
                         </li>
                         <li className='cursor-pointer hover:text-white hover:animate-pulse'>
-                            <a href="#contact">
+                            <a href="#Kontakt">
                                 <p className="group hover:text-white transition duration-300">
                                     KONTAKT
                                     <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-red-600"></span>
@@ -95,7 +95,7 @@ const Navbar = () => {
             </div>
             <div className='flex justify-between items-center lg:hidden w-full'>
                 <div className={`z-20 ${fix ? "mt-0" : "mt-8"} transition-mt duration-500 ml-10 md:ml-20 cursor-pointer`}>
-                    <a href="#carousel">
+                    <a href="#Domov">
                         <img className="w-40 md:w-52 cursor-pointer" height="100" width="100" src="/transparent_logo.webp" alt="LPnabýtok_logo"/> 
                     </a>
                 </div>
