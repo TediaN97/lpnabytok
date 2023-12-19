@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { kitchenImages } from '../utils/ImportAll';
 import { bedroomsImages } from '../utils/ImportAll';
 import { bathroomsImages } from '../utils/ImportAll';
-import { accessoriesImages } from '../utils/ImportAll';
 import { wardrobesImages } from '../utils/ImportAll';
-import { livingWallsImages } from '../utils/ImportAll';
 
 interface props {
   gallery: string
@@ -113,13 +111,9 @@ const Gallery = (props: props) => {
                     height="100%"
                     onClick={() => getImg(kitchenImages, index)} />
                 ))
-              ) : props.gallery === 'vstavaneSkrine' ? (
+              ) : props.gallery === 'steny-a-skrine' ? (
                 wardrobesImages.map(({ key, value }, index) => (
                   <img className='rounded-2xl cursor-pointer hover:opacity-70' key={index} loading="lazy" src={key} alt={`vstavaná_skriňa-${index}`} onClick={() => getImg(wardrobesImages, index)}/>
-                ))
-              ) : props.gallery === 'obyvacieSteny' ? (
-                livingWallsImages.map(({ key, value }, index) => (
-                  <img className='rounded-2xl cursor-pointer hover:opacity-70' key={index} loading="lazy" src={key} alt={`obývacia_stena-${index}`} onClick={() => getImg(livingWallsImages, index)}/>
                 ))
               ) : props.gallery === 'spalne' ? (
                 bedroomsImages.map(({ key, value }, index) => (
@@ -128,10 +122,6 @@ const Gallery = (props: props) => {
               ) : props.gallery === 'kupelne' ? (
                 bathroomsImages.map(({ key, value }, index) => (
                   <img className='rounded-2xl cursor-pointer hover:opacity-70'  key={index} loading="lazy" src={key} alt={`kúpeľňa-${index}`} onClick={() => getImg(bathroomsImages, index)}/>
-                ))
-              ) : props.gallery === 'ine' ? (
-                accessoriesImages.map(({ key, value }, index) => (
-                  <img className='rounded-2xl cursor-pointer hover:opacity-70' key={index} loading="lazy" src={key} alt={`ine-${index}`} onClick={() => getImg(accessoriesImages, index)}/>
                 ))
               ) : ( 
                 <div>

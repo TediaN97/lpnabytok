@@ -9,8 +9,8 @@ const {src, name, folder } = Astro.props;
 ---
 
 <a href={`/galeria/${folder}`} style={{backgroundImage: `url(${src})`}} class='h-[300px]  rounded-2xl bg-cover bg-center cursor-pointer transport-all duration-500 lg:hover:scale-110 lg:hover:transport-all lg:hover:duration-500 group lg:h-[450px]'>
-    <div class='h-20 mt-[220px] bg-black lg:mt-[322px] lg:h-32 rounded-2xl bg-opacity-50 items-center justify-center flex flex-col'>
-        <p class='font-semibold text-2xl text-white text-center mb-3'>
+    <div class='h-32 mt-[173px] bg-black lg:mt-[322px] lg:h-32 rounded-2xl bg-opacity-50 items-center justify-center flex flex-col'>
+        <p class='font-semibold text-lg lg:text-2xl w-1/2 md:w-3/4 2xl:w-1/3 text-white text-center mb-3'>
             {name}
         </p>
         <p class='lg:opacity-0 group-hover:opacity-100 transport-all duration-500 hover:transport-all hover:duration-500 font-regular text-sm text-white text-center'>

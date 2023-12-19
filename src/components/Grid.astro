@@ -3,19 +3,14 @@ import Tile from "./Tile.astro";
 
 const furniture= [
     {
-        src: '/kuchynaFotka.webp',
+        src: '/kuchyna.webp',
         name: 'Kuchyne',
         folder: 'kuchyne'
     },
     {
-        src: '/vstavana.webp',
-        name: 'Vstavané skrine',
-        folder: 'vstavaneSkrine'
-    },
-    {
-        src: '/obyvacka2.webp',
-        name: 'Obývacie steny',
-        folder: 'obyvacieSteny'
+        src: '/obyvacka.webp',
+        name: 'Vstavané skrine a obývacie steny',
+        folder: 'steny-a-skrine'
     },
     {
         src: '/spalna.webp',
@@ -26,16 +21,11 @@ const furniture= [
         src: '/kupelna.webp',
         name: 'Kúpelne',
         folder: 'kupelne'
-    },
-    {
-        src: '/LPnabytok.webp',
-        name: 'Iné',
-        folder: 'ine'
-    },
+    }
 ];
 ---
 
-<div class='grid grid-cols-1 gap-5 mt-10 md:mt-20 ml-10 mr-10 md:gap-10 md:ml-32 md:mr-32 sm:grid-cols-2 xl:grid-cols-3' data-aos="fade-up" data-aos-delay={700} data-aos-duration="600" data-aos-easing="ease-in-sine" >
+<div class='grid grid-cols-1 gap-5 mt-10 md:mt-20 ml-10 mr-10 md:gap-10 md:ml-32 md:mr-32 md:grid-cols-2' data-aos="fade-up" data-aos-delay={700} data-aos-duration="600" data-aos-easing="ease-in-sine" >
     {furniture.map((item) => 
         <Tile src={item.src} name={item.name} folder={item.folder}/>
     )}
