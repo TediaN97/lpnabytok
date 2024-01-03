@@ -1,67 +1,62 @@
-import React, { useState, useEffect, type ChangeEvent, type FormEvent } from 'react'; 
-import { useForm, ValidationError } from '@formspree/react';
+import React, { useState, useRef, useEffect, type FormEvent, type ChangeEvent } from 'react'; 
+import emailjs from '@emailjs/browser';
 
 interface props {
     isStateSuccess: (newState: boolean) => void;
 }
 
-interface FormData {
-    name: string;
-    email: string;
-    tel: string;
-    message: string;
-  }
-
 const ContactForm = (props: props) => {
 
-    const [ formData, setFormData ] = useState<FormData>({
-        name: '',
-        email: '',
-        tel: '',
-        message: '',
-    })
-    
-    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormData({...formData, [e.target.name]: e.target.value });
+    const form = useRef();  
+
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [tel, setTel] = useState("");
+    const [message, setMessage] = useState("");
+    const [status, setStatus] = useState(false);
+
+
+    const sendEmail = (e : FormEvent) => {
+        e.preventDefault();
+
+        const serviceId = 'service_ipk6zaq';
+        const templateId = 'template_v1xg5u5';
+        const publicKey =  'xonzxWUu3Mu658CPq'
+
+        const templateParams = {
+            name: name,
+            email: email,
+            tel: tel,
+            message: message
+        }
+
+        emailjs.send(serviceId, templateId, templateParams, publicKey)
+            .then((response) => {
+                console.log('Email bol uspesne odoslany!', response);
+                setStatus(true);
+                setName('');
+                setEmail('');
+                setTel('');
+                setMessage('');
+            })
+            .catch((error) => {
+                console.error('Error poslanie emailu', error);
+            });
     }
 
-    const handleSubmit = async (e: FormEvent) => {
-        e.preventDefault();
-    
-        try {
-          const response = await fetch('/lpnabytok/src/utils/senderMail.php', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-          });
-    
-          if (response.ok) {
-            // Spracovanie úspešného odoslanie
-            console.log('Formulár bol úspešne odoslaný.');
-          } else {
-            // Spracovanie chyby
-            console.error('Chyba pri odosielaní formulára.');
-          }
-        } catch (error) {
-          console.error('Chyba pri odosielaní formulára:', error);
+    useEffect(() => {
+        if(status){
+            props.isStateSuccess(true);
         }
-      };
+        return () => {
+            setStatus(false);
+        }
 
-    // useEffect(() => {
-    //     if(state.succeeded){
-    //         props.isStateSuccess(true);
-    //     }
-    //     return () => {
-    //         state.succeeded = false;
-    //     }
-
-    // }, [state.succeeded])
+    }, [status])
 
     return (
        <div className='w-full mt-10 lg:w-9/12 xl:w-[800px] rounded-lg border-2 border-gray-600 bg-white lg:rounded-2xl'>
-            <form onSubmit={handleSubmit}>
+            <form ref={form} onSubmit={sendEmail}>
                 <div className='block mt-10 lg:flex lg:justify-evenly lg:mt-16'>
                     <div className='flex flex-col items-center'>
                         <input 
@@ -70,8 +65,8 @@ const ContactForm = (props: props) => {
                             className="h-10 w-11/12 lg:w-80 bg-gray-600 rounded-xl mb-5 p-4 text-white shadow-lg shadow-gray-600"
                             id="name"
                             placeholder="Meno" 
-                            value={formData.name}
-                            onChange={handleChange}
+                            value={name}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
                             required
                         />
                         <input 
@@ -80,8 +75,8 @@ const ContactForm = (props: props) => {
                             className="h-10 w-11/12 lg:w-80 bg-gray-600 rounded-xl mb-5 p-4 text-white shadow-lg shadow-gray-600"
                             id="email"
                             placeholder="E-mail" 
-                            value={formData.email}
-                            onChange={handleChange}
+                            value={email}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
                             required
                         />
                         <input 
@@ -90,9 +85,9 @@ const ContactForm = (props: props) => {
                             className="h-10 w-11/12 lg:w-80 bg-gray-600 rounded-xl mb-10 p-4 text-white shadow-lg shadow-gray-600"
                             id="tel"
                             placeholder="Telefón"
-                            value={formData.tel}
-                            onChange={handleChange}
-                            maxLength={13} 
+                            maxLength={13}
+                            value={tel}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => setTel(e.target.value)} 
                             required
                         />
                     </div>
@@ -101,9 +96,9 @@ const ContactForm = (props: props) => {
                             name="message"
                             className="h-40 w-11/12 lg:w-80 bg-gray-600 rounded-xl mb-10 p-4 text-white shadow-lg shadow-gray-600 resize-none"
                             id="textarea"
-                            placeholder="Správa" 
-                            value={formData.message}
-                            onChange={handleChange}
+                            placeholder="Správa"
+                            value={message}
+                            onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setMessage(e.target.value)}  
                             required
                         />
                     </div>     
