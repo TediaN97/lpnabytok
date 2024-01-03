@@ -44,16 +44,16 @@ const Footer = () => {
                         <br />
                         +421 910 443 393 <br />
                         lpnabytok@gmail.com <br />
-                        lp@lpnabytok.sk <br />
+                        info@lpnabytok.sk <br />
                     </p>
                 </div>
             </div>
             <div className='justify-center flex flex-col items-center text-center text-white mt-5 lg:mt-10'>
                 <p className='text-sm font-bold'>
-                    Všetky práva vyhradené. © 2023 lpnabytok.sk 
+                    Všetky práva vyhradené. © 2024 lpnabytok.sk 
                 </p>
                 <p className='text-sm font-bold mb-5'>
-                    Created by Matúš Sabat.
+                    Created by <a href='https://www.linkedin.com/in/mat%C3%BA%C5%A1-sabat-571002118/'>Matúš Sabat</a>.
                 </p>
             </div>
         </div> 
