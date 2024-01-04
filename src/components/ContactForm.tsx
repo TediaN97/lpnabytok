@@ -18,6 +18,7 @@ const ContactForm = (props: props) => {
 
     const sendEmail = (e : FormEvent) => {
         e.preventDefault();
+        setButtonDisabled(true);
 
         const serviceId = 'service_ipk6zaq';
         const templateId = 'template_v1xg5u5';
@@ -44,10 +45,6 @@ const ContactForm = (props: props) => {
                 console.error('Error poslanie emailu', error);
                 setButtonDisabled(false);
             });
-    }
-
-    const handleClick = () => {
-        setButtonDisabled(true);
     }
 
     useEffect(() => {
@@ -115,10 +112,9 @@ const ContactForm = (props: props) => {
                     </p>
                     <button
                         type="submit"
-                        className={`cursor-pointer w-56 h-12 rounded-xl mt-5 mb-10 text-white bg-red-600 font-bold transform-all duration-200 
-                                ${isButtonDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:transform-all hover:duration-200 hover:bg-red-700 hover:shadow-red-700 hover:shadow-xl'}
+                        className={`w-56 h-12 rounded-xl mt-5 mb-10 text-white bg-red-600 font-bold transform-all duration-200 
+                                ${isButtonDisabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer hover:transform-all hover:duration-200 hover:bg-red-700 hover:shadow-red-700 hover:shadow-xl'}
                         `}
-                        onClick={handleClick}
                         disabled={isButtonDisabled}
                     >
                         ODOSLAŤ
