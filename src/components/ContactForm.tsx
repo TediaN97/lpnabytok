@@ -14,7 +14,7 @@ const ContactForm = (props: props) => {
     const [tel, setTel] = useState("");
     const [message, setMessage] = useState("");
     const [status, setStatus] = useState(false);
-
+    const [isButtonDisabled, setButtonDisabled] = useState(false);
 
     const sendEmail = (e : FormEvent) => {
         e.preventDefault();
@@ -34,6 +34,7 @@ const ContactForm = (props: props) => {
             .then((response) => {
                 console.log('Email bol uspesne odoslany!', response);
                 setStatus(true);
+                setButtonDisabled(false);
                 setName('');
                 setEmail('');
                 setTel('');
@@ -41,7 +42,12 @@ const ContactForm = (props: props) => {
             })
             .catch((error) => {
                 console.error('Error poslanie emailu', error);
+                setButtonDisabled(false);
             });
+    }
+
+    const handleClick = () => {
+        setButtonDisabled(true);
     }
 
     useEffect(() => {
@@ -109,7 +115,11 @@ const ContactForm = (props: props) => {
                     </p>
                     <button
                         type="submit"
-                        className='w-56 h-12 rounded-xl mt-5 mb-10 text-white bg-red-600 font-bold transform-all duration-200 hover:transform-all hover:duration-200 hover:bg-red-700 hover:shadow-red-700 hover:shadow-xl'
+                        className={`cursor-pointer w-56 h-12 rounded-xl mt-5 mb-10 text-white bg-red-600 font-bold transform-all duration-200 
+                                ${isButtonDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:transform-all hover:duration-200 hover:bg-red-700 hover:shadow-red-700 hover:shadow-xl'}
+                        `}
+                        onClick={handleClick}
+                        disabled={isButtonDisabled}
                     >
                         ODOSLAŤ
                     </button>
