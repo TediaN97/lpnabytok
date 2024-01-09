@@ -99,7 +99,7 @@ const Navbar = () => {
                         <img className="w-40 md:w-52 cursor-pointer" height="100" width="100" src="/transparent_logo.webp" alt="LPnabýtok_logo"/> 
                     </a>
                 </div>
-                <button id="buttonMenu" title="MenuButton" onClick={() => setIsOpened(!isOpened)} className={`z-40 fixed ${fix ? "mt-0" : "mt-8"} transition-mt duration-500 right-10 md:right-20 p-3 w-11 h-11 rounded-md`}>
+                <button id="buttonMenu" title="MenuButton" onClick={() => setIsOpened(!isOpened)} className={`z-50 fixed ${fix ? "mt-0" : "mt-8"} transition-mt duration-500 right-10 md:right-20 p-3 w-11 h-11 rounded-md`}>
                     <div className={`bg-white h-0.5 rounded-md w-full transition-all ${ isOpened ? "rotate-45 translate-y-0.5" : "" }`}>
                     </div>
                     <div className={`bg-white h-0.5 rounded-md w-3/4 my-1 ${ isOpened ? "hidden" : ""}`}>
