@@ -58,7 +58,7 @@ const ContactForm = (props: props) => {
     }, [status])
 
     return (
-       <div className='w-full mt-10 lg:w-9/12 xl:w-[800px] rounded-lg border-2 border-gray-600 bg-white lg:rounded-2xl z-40'>
+       <div className='w-full mt-10 lg:w-9/12 xl:w-[800px] rounded-lg border-2 border-gray-600 bg-white lg:rounded-2xl z-30'>
             <form ref={form} onSubmit={sendEmail}>
                 <div className='block mt-10 lg:flex lg:justify-evenly lg:mt-16'>
                     <div className='flex flex-col items-center'>

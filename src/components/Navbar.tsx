@@ -48,10 +48,10 @@ const Navbar = () => {
       }, []); 
 
     return (
-        <nav className={`fixed z-50 top-0 w-full text-white ${fix ? ' bg-gray-600 font-inria trasition duration-500 shadow-2xl' : 'bg-transparent  trasition duration-500'}`}>
+        <nav className={`fixed z-40 top-0 w-full text-white ${fix ? ' bg-gray-600 font-inria trasition duration-500 shadow-2xl' : 'bg-transparent  trasition duration-500'}`}>
             <div className='hidden lg:flex lg:justify-between'>
                 <div className="ml-20 xl:ml-48">
-                    <a href="'/#Domov" >
+                    <a href="/#Domov" >
                         <img className="w-52 cursor-pointer" height="100" width="208" src="/transparent_logo.webp" alt="LPnabýtok_logo"/> 
                     </a>
                 </div>
@@ -94,12 +94,12 @@ const Navbar = () => {
                 </div>
             </div>
             <div className='flex justify-between items-center lg:hidden w-full'>
-                <div className={`z-50 ${fix ? "mt-0" : "mt-8"} transition-mt duration-500 ml-10 md:ml-20 cursor-pointer`}>
-                    <a href="#Domov">
+                <div className={`z-40 ${fix ? "mt-0" : "mt-8"} transition-mt duration-500 ml-10 md:ml-20 cursor-pointer`}>
+                    <a href="/#Domov">
                         <img className="w-40 md:w-52 cursor-pointer" height="100" width="100" src="/transparent_logo.webp" alt="LPnabýtok_logo"/> 
                     </a>
                 </div>
-                <button id="buttonMenu" title="MenuButton" onClick={() => setIsOpened(!isOpened)} className={`z-50 fixed ${fix ? "mt-0" : "mt-8"} transition-mt duration-500 right-10 md:right-20 p-3 w-11 h-11 rounded-md`}>
+                <button id="buttonMenu" title="MenuButton" onClick={() => setIsOpened(!isOpened)} className={`z-40 fixed ${fix ? "mt-0" : "mt-8"} transition-mt duration-500 right-10 md:right-20 p-3 w-11 h-11 rounded-md`}>
                     <div className={`bg-white h-0.5 rounded-md w-full transition-all ${ isOpened ? "rotate-45 translate-y-0.5" : "" }`}>
                     </div>
                     <div className={`bg-white h-0.5 rounded-md w-3/4 my-1 ${ isOpened ? "hidden" : ""}`}>
@@ -107,7 +107,7 @@ const Navbar = () => {
                     <div className={`bg-white h-0.5 rounded-md w-full transition-all ${ isOpened ? "-rotate-45" : "" }`}>
                     </div>
                 </button>
-                <motion.div className={`z-50 fixed top-0 right-0 bottom-0 bg-gray-600 flex flex-col ${ isOpened ? "w-full" : "w-0"}`}
+                <motion.div className={`z-40 fixed top-0 right-0 bottom-0 bg-gray-600 flex flex-col ${ isOpened ? "w-full" : "w-0"}`}
                     animate={
                         isOpened ? "open" : "closed"
                     }

@@ -92,7 +92,7 @@ const Gallery = (props: props) => {
 
   return (
     <>
-      <div onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} className={image ? "w-full h-screen fixed top-0 left-0 flex justify-center items-center bg-black visible opacity-100 scale(1) overflow-hidden z-30" : "w-full h-screen fixed top-0 left-0 flex justify-center items-center bg-black invisible opacity-0 scale(0) overflow-hidden z-999"}>
+      <div onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} className={image ? "w-full h-screen fixed top-0 left-0 flex justify-center items-center bg-black visible opacity-100 scale(1) overflow-hidden z-50" : "w-full h-screen fixed top-0 left-0 flex justify-center items-center bg-black invisible opacity-0 scale(0) overflow-hidden z-999"}>
         <img className='w-auto max-w-full h-auto max-h-full block leading-1 box-border pl-[20px] pr-[20px] m-auto' src={tempingSrc} alt="" />
         <img className={`fixed w-10 h-10 p-1 md:w-14 md:h-14 md:p-2 lg:w-16 lg:h-16 lg:p-4 bg-black/40 z-50 hover:bg-white/10 cursor-pointer rounded-2xl left-5 ${currentImageIndex === 0 ? "hidden" : "flex" } `} src="/chevron-compact-left.svg" alt="left-chevron" onClick={() => prevImg( currentImageIndex - 1)} />
         <img className={`fixed w-10 h-10 p-1 md:w-14 md:h-14 md:p-2 lg:w-16 lg:h-16 lg:p-4 bg-black/40 z-50 hover:bg-white/10 cursor-pointer rounded-2xl right-5 ${currentImageIndex === imgs.length - 1 ? "hidden" : "flex" } `} src="/chevron-compact-right.svg" alt="right-chevron" onClick={() => nextImg( currentImageIndex + 1)}/>
