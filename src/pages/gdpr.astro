@@ -1,20 +1,19 @@
 ---
 import '../styles.css';
 import Layout from '../layouts/Layout.astro';
-import MenuLogo from '../components/MenuLogo.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer';
 ---
 
 <Layout title="GDPR - Ochrana osobných údajov">
-    <div class="absolute h-[800px] w-[1100px] rounded-bl-full right-0 bg-red-200/30">
-    </div>
-    <MenuLogo />
-    <div class="w-full flex items-center justify-center font-inter">
-        <h1 class='h-12 w-full text-xl md:text-2xl md:h-14 md:w-3/4 lg:h-16 lg:w-1/2 lg:text-3xl font-black mt-10 text-black rounded-2xl text-center justify-center relative'>
-            GDPR - OCHRANA OSOBNÝCH ÚDAJOV
-            <span class="block w-1/2 mt-3 ml-24 md:ml-36 md:w-1/2 lg:mt-5 xl:w-1/2 xl:ml-[215px] h-1 bg-red-600"></span>
-        </h1>
-    </div>
-    <div class="p-4 mt-10 md:ml-10 md:mr-10 xl:mt-20 xl:ml-44 xl:mr-44 font-inter relative">
+    <Header name='gdpr' />
+    <div 
+        class="p-4 mt-10 md:ml-10 md:mr-10 xl:mt-20 xl:ml-44 xl:mr-44 font-inter relative"
+        data-aos="fade-up"
+        data-aos-delay={1200}
+        data-aos-duration="600"
+        data-aos-easing="ease-in-sine"  
+    >
         <h2 class='font-bold text-lg lg:text-2xl'>
             1. Úvod
         </h2>
@@ -102,4 +101,5 @@ import MenuLogo from '../components/MenuLogo.astro';
             Ďakujeme, že ste si prečítali našu informačnú stránku o ochrane osobných údajov.
         </p>
     </div>
+    <Footer />
 </Layout>

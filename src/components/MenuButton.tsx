@@ -10,7 +10,7 @@ interface props {
 const MenuButton = (props: props) => {
 
     return (
-        <a href={`#${props.id}`} className="group hover:text-white transition duration-300" >
+        <a href={`${props.id}`} className="group hover:text-white transition duration-300" >
             <motion.button className="text-2xl font-inter font-black cursor-pointer text-white"
                 whileHover={{
                     scale: 1.3,

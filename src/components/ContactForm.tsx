@@ -58,7 +58,7 @@ const ContactForm = (props: props) => {
     }, [status])
 
     return (
-       <div className='w-full mt-10 lg:w-9/12 xl:w-[800px] rounded-lg border-2 border-gray-600 bg-white lg:rounded-2xl'>
+       <div className='w-full mt-10 lg:w-9/12 xl:w-[800px] rounded-lg border-2 border-gray-600 bg-white lg:rounded-2xl z-40'>
             <form ref={form} onSubmit={sendEmail}>
                 <div className='block mt-10 lg:flex lg:justify-evenly lg:mt-16'>
                     <div className='flex flex-col items-center'>
@@ -79,6 +79,7 @@ const ContactForm = (props: props) => {
                             id="email"
                             placeholder="E-mail" 
                             value={email}
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                             onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
                             required
                         />
@@ -108,7 +109,7 @@ const ContactForm = (props: props) => {
                 </div>
                 <div className='flex flex-col text-center items-center justify-center lg:flex-row lg:justify-evenly xl:justify-center'>
                     <p className='text-xs w-11/12 lg:w-[450px] lg:mb-10'>
-                        Kliknutím na tlačidlo ODOSLAŤ súhlasíte so spracovaním Vami zadaných údajov za účelom zodpovedania otázky či podnetu adresátom správy, ktorým je spoločnosť LPnábytok s. r. o. Bližšie informácie o spracovaní a ochrane osobných údajov nájdete v sekcii "GDPR - Spracovanie osobných údajov".  
+                        Kliknutím na tlačidlo ODOSLAŤ súhlasíte so spracovaním Vami zadaných údajov za účelom zodpovedania otázky či podnetu adresátom správy, ktorým je spoločnosť LPnábytok s. r. o. Bližšie informácie o spracovaní a ochrane osobných údajov nájdete v sekcii "GDPR - Ochrana osobných údajov".  
                     </p>
                     <button
                         type="submit"

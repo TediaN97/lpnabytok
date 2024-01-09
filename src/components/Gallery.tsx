@@ -99,7 +99,13 @@ const Gallery = (props: props) => {
         <img className='fixed top-6 right-5 p-4 bg-black/40 z-50 cursor-pointer hover:bg-white/10 rounded-2xl' src='/close.svg' alt='zatvoriť' onClick={close} /> 
       </div>
       <div className='relative p-5 md:p-10 xl:ml-32 xl:mr-32'>
-          <div className='columns-1 gap-5 lg:gap-8 sm:columns-2 lg:columns-3 xl:columns-4 [&>img:not(:first-child)]:mt-5 lg:[&>img:not(:first-child)]:mt-8'>
+          <div 
+            className='columns-1 gap-5 lg:gap-8 sm:columns-2 lg:columns-3 xl:columns-4 [&>img:not(:first-child)]:mt-5 lg:[&>img:not(:first-child)]:mt-8'
+            data-aos="fade-up"
+            data-aos-delay={1200}
+            data-aos-duration="600"
+            data-aos-easing="ease-in-sine" 
+          >
               {props.gallery === 'kuchyne' ? (
                 kitchenImages.map(({ key, value }, index) => (
                   <img className='rounded-2xl cursor-pointer hover:opacity-70' 

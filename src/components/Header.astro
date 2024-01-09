@@ -1,0 +1,22 @@
+---
+import NavbarOthersPages from './NavbarOthersPages.tsx';
+import HeaderName from '../components/HeaderName.astro';
+
+interface Props {
+    name: string;
+}
+
+const { name } = Astro.props;
+
+---
+
+<div class="w-full h-[350px] bg-gray-800 font-inria rounded-b-lg" id="/Domov" >
+    <div style={{backgroundImage: `url(/kuchyna.webp)`}} class="bg-[length:100%_100%] w-full h-full bg-center opacity-40 duration-500 rounded-b-lg">
+    </div>
+    <NavbarOthersPages client:load/>
+    <div class="absolute flex items-center justify-center w-full top-[0%] h-[350px]">
+        <div class="text-white">
+            <HeaderName name={name} />
+        </div>
+    </div>
+</div>

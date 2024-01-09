@@ -11,12 +11,12 @@ const Footer = () => {
                 <div className='text-white mt-5 lg:ml-52 text-md md:text-lg lg:mt-10 xl:mt-24 scroll-smooth'>
                     <ul>
                         <li className='mb-3 cursor-pointer transport-all duration-500 hover:transport-all hover:duration-500 hover:text-red-600'>
-                            <a href="#ONas">
+                            <a href="/#ONas">
                                 O Nás
                             </a>
                         </li>
                         <li className='mb-3 cursor-pointer transport-all duration-500 hover:transport-all hover:duration-500 hover:text-red-600'>
-                            <a href="#Produkty">
+                            <a href="/#Produkty">
                                 Produkty
                             </a>
                         </li>

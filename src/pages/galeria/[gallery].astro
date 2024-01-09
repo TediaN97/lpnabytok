@@ -8,20 +8,15 @@ export function getStaticPaths() {
   ];
 }
 
+import '../../styles.css';
 import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
 import Gallery from '../../components/Gallery';
-import HeaderName from '../../components/HeaderName.astro';
-import MenuLogo from '../../components/MenuLogo.astro';
 
 const { gallery } = Astro.params;
 ---
 
-<Layout title={`Galéria`}>
-    <div class="absolute h-[800px] w-[1100px] rounded-bl-full right-0 bg-red-200/30">
-    </div>
-      <MenuLogo />
-    <div class='relative justify-center items-center flex'>
-      <HeaderName gallery={gallery} />
-    </div>
-      <Gallery client:load gallery={gallery}/>
+<Layout title="Galéria">
+    <Header name={gallery} />
+    <Gallery client:load gallery={gallery}/>
 </Layout>

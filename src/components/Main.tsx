@@ -4,7 +4,7 @@ const Main = () => {
 
     return (
         <div>
-            <div className="block items-center justify-center text-center text-white mb-10">
+            <div className="block items-center justify-center text-center text-white">
                 <h2 
                     className="text-md md:tracking-[5px] lg:text-xl lg:tracking-[11px] lg:ml-3 font-regular"
                     data-aos="fade-up"
@@ -28,7 +28,6 @@ const Main = () => {
                 <img className='h-10 animate-bounce' src="/scroll.webp" alt="skrollovať" />
             </div>
         </div>
-
     )
 }
 

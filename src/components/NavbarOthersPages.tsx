@@ -11,15 +11,15 @@ const Navbar = () => {
     const menuButtonsName = [
         {
             name: "DOMOV",
-            id: "#Domov" 
+            id: "/#Domov" 
         },
         {
             name: "PRODUKTY",
-            id: "#Produkty"
+            id: "/#Produkty"
         },
         {
             name: "O NÁS",
-            id: "#ONas"
+            id: "/#ONas"
         },
         {
             name: "KONTAKT",
@@ -51,14 +51,14 @@ const Navbar = () => {
         <nav className={`fixed z-50 top-0 w-full text-white ${fix ? ' bg-gray-600 font-inria trasition duration-500 shadow-2xl' : 'bg-transparent  trasition duration-500'}`}>
             <div className='hidden lg:flex lg:justify-between'>
                 <div className="ml-20 xl:ml-48">
-                    <a href="#Domov" >
+                    <a href="/#Domov" >
                         <img className="w-52 cursor-pointer" height="100" width="208" src="/transparent_logo.webp" alt="LPnabýtok_logo"/> 
                     </a>
                 </div>
                 <div className="mr-20 xl:mr-48 flex">
                     <ul className="flex items-center lg:gap-10 xl:gap-32">
                         <li className='cursor-pointer hover:animate-pulse'>
-                            <a href="#Domov">
+                            <a href="/#Domov">
                                 <p className="group hover:text-white transition duration-300">
                                     DOMOV
                                     <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-red-600"></span>
@@ -67,7 +67,7 @@ const Navbar = () => {
 
                         </li>
                         <li className="font-bold cursor-pointer hover:animate-pulse">
-                            <a href="#Produkty">
+                            <a href="/#Produkty">
                                 <p className="group hover:text-white transition duration-300">
                                     PRODUKTY
                                     <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-red-600"></span>
@@ -75,7 +75,7 @@ const Navbar = () => {
                             </a>
                         </li>
                         <li className='cursor-pointer hover:text-white hover:animate-pulse'>
-                            <a href="#ONas">
+                            <a href="/#ONas">
                                 <p className="group hover:text-white transition duration-300">
                                     O NÁS
                                     <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-red-600"></span>
@@ -99,7 +99,7 @@ const Navbar = () => {
                         <img className="w-40 md:w-52 cursor-pointer" height="100" width="100" src="/transparent_logo.webp" alt="LPnabýtok_logo"/> 
                     </a>
                 </div>
-                <button id="buttonMenu" title="MenuButton" onClick={() => setIsOpened(!isOpened)} className={`z-50 fixed ${fix ? "mt-0" : "mt-8"} transition-mt duration-500 right-10 md:right-20 p-3 w-11 h-11 rounded-md`}>
+                <button id="buttonMenu" title="MenuButton" onClick={() => setIsOpened(!isOpened)} className={`z-20 fixed ${fix ? "mt-0" : "mt-8"} transition-mt duration-500 right-10 md:right-20 p-3 w-11 h-11 rounded-md`}>
                     <div className={`bg-white h-0.5 rounded-md w-full transition-all ${ isOpened ? "rotate-45 translate-y-0.5" : "" }`}>
                     </div>
                     <div className={`bg-white h-0.5 rounded-md w-3/4 my-1 ${ isOpened ? "hidden" : ""}`}>
