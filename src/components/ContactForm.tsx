@@ -109,7 +109,7 @@ const ContactForm = (props: props) => {
                 </div>
                 <div className='flex flex-col text-center items-center justify-center lg:flex-row lg:justify-evenly xl:justify-center'>
                     <p className='text-xs w-11/12 lg:w-[450px] lg:mb-10'>
-                        Kliknutím na tlačidlo ODOSLAŤ súhlasíte so spracovaním Vami zadaných údajov za účelom zodpovedania otázky či podnetu adresátom správy, ktorým je spoločnosť LPnábytok s. r. o. Bližšie informácie o spracovaní a ochrane osobných údajov nájdete v sekcii "GDPR - Ochrana osobných údajov".  
+                        Kliknutím na tlačidlo ODOSLAŤ súhlasíte so spracovaním Vami zadaných údajov za účelom zodpovedania otázky či podnetu adresátom správy, ktorým je spoločnosť LPnábytok. Bližšie informácie o spracovaní a ochrane osobných údajov nájdete v sekcii "GDPR - Ochrana osobných údajov".  
                     </p>
                     <button
                         type="submit"
