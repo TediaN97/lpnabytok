@@ -20,9 +20,9 @@ const ContactForm = (props: props) => {
         e.preventDefault();
         setButtonDisabled(true);
 
-        const serviceId = 'service_ipk6zaq';
-        const templateId = 'template_v1xg5u5';
-        const publicKey =  'xonzxWUu3Mu658CPq'
+        const serviceId = '***************';
+        const templateId = '***************';
+        const publicKey =  '***************'
 
         const templateParams = {
             name: name,
