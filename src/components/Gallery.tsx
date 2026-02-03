@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { kitchenImages } from '../utils/ImportAll';
-import { bedroomsImages } from '../utils/ImportAll';
-import { bathroomsImages } from '../utils/ImportAll';
-import { wardrobesImages } from '../utils/ImportAll';
+import { kitchenImages } from '../utils/ImportAll.tsx';
+import { bedroomsImages } from '../utils/ImportAll.tsx';
+import { bathroomsImages } from '../utils/ImportAll.tsx';
+import { wardrobesImages } from '../utils/ImportAll.tsx';
 
 interface props {
   gallery: string

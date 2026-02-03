@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import Navbar from './Navbar';
-import Main from './Main';
+import Navbar from './Navbar.tsx';
+import Main from './Main.tsx';
 
 const Carousel = () => {
 

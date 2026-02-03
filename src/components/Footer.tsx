@@ -44,7 +44,6 @@ const Footer = () => {
                         <br />
                         +421 910 443 393 <br />
                         lpnabytok@gmail.com <br />
-                        info@lpnabytok.sk <br />
                     </p>
                 </div>
             </div>

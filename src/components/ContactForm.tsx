@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect, type FormEvent, type ChangeEvent } from 'react'; 
-import emailjs from '@emailjs/browser';
 
 interface props {
     isStateSuccess: (newState: boolean) => void;
@@ -7,7 +6,7 @@ interface props {
 
 const ContactForm = (props: props) => {
 
-    const form = useRef();  
+    const form = useRef<HTMLFormElement | null>(null);  
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -16,35 +15,35 @@ const ContactForm = (props: props) => {
     const [status, setStatus] = useState(false);
     const [isButtonDisabled, setButtonDisabled] = useState(false);
 
-    const sendEmail = (e : FormEvent) => {
+    async function sendEmail(e : FormEvent<HTMLFormElement>) {
         e.preventDefault();
         setButtonDisabled(true);
 
-        const serviceId = '***************';
-        const templateId = '***************';
-        const publicKey =  '***************'
-
-        const templateParams = {
-            name: name,
-            email: email,
-            tel: tel,
-            message: message
-        }
-
-        emailjs.send(serviceId, templateId, templateParams, publicKey)
-            .then((response) => {
-                console.log('Email bol uspesne odoslany!', response);
-                setStatus(true);
-                setButtonDisabled(false);
-                setName('');
-                setEmail('');
-                setTel('');
-                setMessage('');
-            })
-            .catch((error) => {
-                console.error('Error poslanie emailu', error);
-                setButtonDisabled(false);
+        try {
+            const res = await fetch("https://api.lpnabytok.sk/sendmail.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name, email, tel, message }),
             });
+
+            if (!res.ok) throw new Error("Request failed");
+
+            setStatus(true);
+            props.isStateSuccess(true);
+
+            // reset form fields
+            setName("");
+            setEmail("");
+            setTel("");
+            setMessage("");
+        } catch (err) {
+            console.error(err);
+            setStatus(false);
+            props.isStateSuccess(false);
+            // tu si môžeš dať toast / error hlášku
+        } finally {
+            setButtonDisabled(false);
+        }
     }
 
     useEffect(() => {
